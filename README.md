@@ -19,7 +19,7 @@ Front Camera | 8MP (OV)
 
 ![Elephone P9000](http://www.pixic.ru/i/p0Y19177m022b1u5.png "Elephone P9000 in black")
 
-This branch is for building Twrp or Omni ROM (or Android Marshmallow 6.0 AOSP based roms) ROM.
+This branch is for building TWRP.
 
 ## Thanks to:
  * CyanogenMod team
