@@ -39,5 +39,5 @@ repo sync
 
 lunch omni_p9000-userdebug
 
-make clean && make -j5 recoveryimage
+make clean && make recoveryimage
 ```
