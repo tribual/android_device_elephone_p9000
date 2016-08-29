@@ -30,10 +30,6 @@ PRODUCT_MODEL := P9000
 PRODUCT_MANUFACTURER := Elephone
 PRODUCT_RELEASE_NAME := P9000
 
-# TWRP.fstab
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/recovery.fstab
-
 # Time Zone data for Recovery
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
