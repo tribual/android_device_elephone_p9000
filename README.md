@@ -21,13 +21,18 @@ Front Camera | 8MP (OV)
 
 This branch is for building TWRP.
 
-## Thanks to:
+### Thanks to:
  * CyanogenMod team
+ * Deepflex
  * Wuxianlin
+ * Ferhung
+ * SHVED
  * Xen0n
- * Leskal
  * JonnyXDA
  * olegsvs
+ * Visi0nary
+ * andyrichardson
+ * Team M.A.D
 
 To build: 
 ```
