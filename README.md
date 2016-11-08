@@ -34,7 +34,7 @@ This branch is for building TWRP.
  * andyrichardson
  * Team M.A.D
 
-To build: 
+### To build: 
 ```
 repo init --depth=1 -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
 
