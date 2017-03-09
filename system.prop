@@ -1,3 +1,6 @@
+# Camera
+persist.camera.HAL3.enabled=1
+
 # RIL
 rild.libpath=mtk-ril.so
 rild.libargs=-d[SPACE]/dev/ttyC0
