@@ -52,7 +52,6 @@ bin/mobile_log_d
 bin/msensord
 bin/mtk_agpsd
 bin/mtkrild
-bin/mtkrildmd2
 bin/muxreport
 bin/netdiag
 bin/nvram_agent_binder
@@ -220,6 +219,7 @@ lib/hw/lights.mt6755.so
 lib/hw/memtrack.mt6755.so
 lib/hw/mmsdk.mt6755.so
 lib/hw/nfc_nci.mt6605.default.so
+lib/hw/radio.fm.mt6735.so
 lib/hw/sensors.mt6755.so
 lib/lib3a.so
 lib/lib3a_sample.so
@@ -395,7 +395,6 @@ lib/libpq_cust.so
 lib/libpq_prot.so
 lib/libpqservice.so
 lib/librilmtk.so
-lib/librilmtkmd2.so
 lib/libshowlogo.so
 lib/libspeech_enh_lib.so
 lib/libstagefrighthw.so
@@ -412,7 +411,6 @@ lib/libvp8dec_sa.ca7.so
 lib/libvp8enc_sa.ca7.so
 lib/libvp9dec_sa.ca7.so
 lib/mtk-ril.so
-lib/mtk-rilmd2.so
 lib/soundfx/libaudiopreprocessing.so
 lib/soundfx/libbundlewrapper.so
 lib/soundfx/libdownmix.so
@@ -587,7 +585,6 @@ lib64/libpq_cust.so
 lib64/libpq_prot.so
 lib64/libpqservice.so
 lib64/librilmtk.so
-lib64/librilmtkmd2.so
 lib64/libspeech_enh_lib.so
 lib64/libstagefrighthw.so
 lib64/libterservice.so
@@ -599,7 +596,6 @@ lib64/libvcodecdrv.so
 lib64/libwapi.so
 lib64/libwifitest.so
 lib64/mtk-ril.so
-lib64/mtk-rilmd2.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libfrsdk.so
