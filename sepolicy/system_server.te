@@ -268,3 +268,6 @@ allow system_server mtk_mwblacklist_service:service_manager find;
 binder_call(system_server,etsd)
 allow system_server etsd_service:service_manager find;
 allow fingerprintd etsd_service:service_manager find;
+
+# Persist
+allow system_server protect_s_data_file:dir r_dir_perms;
