@@ -148,8 +148,12 @@ etc/audio_param/VolumeGainMap_AudioParam.xml
 etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 etc/audio_param/Volume_AudioParam.xml
 etc/audio_param/Volume_ParamUnitDesc.xml
-etc/MTKNfclicense.lic
-etc/custom.conf
+etc/bluetooth/auto_pair_devlist.conf
+etc/bluetooth/bt_did.conf
+etc/bluetooth/ble_stack.conf
+etc/bluetooth/bt_stack.conf
+etc/bluetooth/bt_stack.conf.debug
+etc/bluetooth/bt_stack.conf.sqc
 etc/firmware/catcher_filter_1_ulwctg_n.bin
 etc/firmware/dsp_1_ulwctg_n.bin
 etc/firmware/modem_1_ulwctg_n.img
@@ -174,7 +178,6 @@ etc/firmware/ROMv2_lm_patch_1_0_hdr.bin
 etc/firmware/ROMv2_lm_patch_1_1_hdr.bin
 etc/firmware/WIFI_RAM_CODE_6755
 etc/firmware/WMT_SOC.cfg
-etc/mtklog-config.prop
 etc/nfc_conformance/DTA_Config/AT4/listen_config.txt
 etc/nfc_conformance/DTA_Config/AT4/listen_polling.txt
 etc/nfc_conformance/DTA_Config/AT4/p2p_config.txt
@@ -207,6 +210,9 @@ etc/nfc_conformance/DTA_Config/Others/platform_config.txt
 etc/nfc_conformance/DTA_Config/Others/platform_config_tagOp.txt
 etc/nfc_conformance/DTA_Config/Others/platform_polling.txt
 etc/nfc_conformance/DTA_Config/Others/platform_polling_tagOp.txt
+etc/custom.conf
+etc/mtklog-config.prop
+etc/MTKNfclicense.lic
 etc/radvd/radvd.conf
 lib/drm/libdrmmtkplugin.so
 lib/egl/libGLES_mali.so
