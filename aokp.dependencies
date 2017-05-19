@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository": "tribual/android_vendor_elephone_p9000",
+    "target_path": "vendor/elephone/p9000",
+    "branch": "aokp6"
+  },
+  {
+    "remote": "github",
+    "repository": "tribual/android_kernel_elephone_p9000",
+    "target_path": "kernel/elephone/p9000",
+    "branch": "aokp6"
+  }
+] 
