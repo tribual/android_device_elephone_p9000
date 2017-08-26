@@ -11,3 +11,7 @@ PRODUCT_COPY_FILES += \
 # Sensor Calibration
 PRODUCT_PACKAGES += \
     libem_sensor_jni
+
+# Sensors HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
