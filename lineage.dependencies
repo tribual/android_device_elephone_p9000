@@ -1,12 +1,6 @@
 [
   {
-    "remote": "github",
-    "repository": "leskal/android_vendor_elephone_p9000",
-    "target_path": "vendor/elephone/p9000"
-  },
-  {
-    "remote": "github",
-    "repository": "leskal/android_kernel_elephone_p9000",
-    "target_path": "kernel/elephone/p9000"
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
   }
 ] 
