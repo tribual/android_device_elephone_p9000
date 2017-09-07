@@ -6,8 +6,7 @@ PRODUCT_COPY_FILES += \
 
 # Package
 PRODUCT_PACKAGES += \
-    Snap \
-    mtkcamera_parameters
+    Snap
 
 # Configuration
 PRODUCT_COPY_FILES += \
