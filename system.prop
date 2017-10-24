@@ -49,6 +49,7 @@ ro.sys.fw.dex2oat_thread_count=3
 # Camera HAL
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,net.sourceforge.opencamera
 
 # Tweaks and Add On's
 ro.media.enc.jpeg.quality=100
