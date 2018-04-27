@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common AOKP stuff.
-$(call inherit-product, vendor/aokp/configs/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/device_p9000.mk)
