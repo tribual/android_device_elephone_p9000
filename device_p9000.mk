@@ -28,6 +28,10 @@ include $(LOCAL_PATH)/product/*.mk
 # Dalvik heap configurations
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
 
+# HIDL
+PRODUCT_COPY_FILES += \
+    device/elephone/p9000/hidl/manifest.xml:system/vendor/manifest.xml
+
 # Call hwui memory config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 

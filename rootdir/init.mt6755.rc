@@ -561,23 +561,23 @@ on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_shutdown_framework
     start stop_modem
 
-service stop_modem /system/bin/md_ctrl 0
+service stop_modem /vendor/bin/md_ctrl 0
     class main
     disabled
     oneshot
 
-service start_modem /system/bin/md_ctrl 1
+service start_modem /vendor/bin/md_ctrl 1
     class main
     disabled
     oneshot
 
-service nvram_daemon /system/bin/nvram_daemon
+service nvram_daemon /vendor/bin/nvram_daemon
     class main
     user root
     group system
     oneshot
 
-service pq /system/bin/pq
+service pq /vendor/bin/pq
     class main
     user system
     group system graphics
@@ -586,7 +586,7 @@ service pq /system/bin/pq
 # SPM firmware loader
 # This is a power manager service
 # SPM - Service Power Manager
-service spm_script /system/bin/spm_loader
+service spm_script /vendor/bin/spm_loader
     class core
     user root
     group root
@@ -602,11 +602,11 @@ on property:wlan.driver.status=ok
 on property:wlan.driver.status=unloaded
     write /dev/wmtWifi "0"
 
-service p2p_supplicant /system/bin/wpa_supplicant \
+service p2p_supplicant /vendor/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -e/data/misc/wifi/entropy.bin -dd \
-    -I/system/etc/wifi/p2p_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/p2p_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
@@ -617,9 +617,9 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant \
+service wpa_supplicant /vendor/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin -dd \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
@@ -635,7 +635,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 #
 
 # GPS
-service agpsd /system/bin/mtk_agpsd
+service agpsd /vendor/bin/mtk_agpsd
     class main
     socket agpsd stream 660 gps system
     socket agpsd2 stream 660 gps inet
@@ -643,23 +643,23 @@ service agpsd /system/bin/mtk_agpsd
     user gps
     group gps radio inet sdcard_r sdcard_rw misc
 
-service slpd /system/bin/slpd
+service slpd /vendor/bin/slpd
     class main
     user gps
     group gps inet
 
-service wifi2agps /system/bin/wifi2agps
+service wifi2agps /vendor/bin/wifi2agps
     class main
     user wifi
     group gps inet
 
-service mnld /system/xbin/mnld
+service mnld /vendor/xbin/mnld
     class main
     user gps
     group gps inet misc sdcard_rw sdcard_r media_rw system radio
     socket mnld stream 660 gps system
 
-service MPED /system/xbin/MPED
+service MPED /vendor/xbin/MPED
     class main
     user gps
     group gps inet misc sdcard_rw sdcard_r media_rw system
@@ -669,110 +669,110 @@ service MPED /system/xbin/MPED
 # sensor service (begin)
 #
 
-service msensord /system/bin/msensord
+service msensord /vendor/bin/msensord
     class main
     oneshot
 
-service s62xd /system/bin/s62xd
+service s62xd /vendor/bin/s62xd
     disabled
     user compass
     group system
     class main
-service ami304d /system/bin/ami304d
+service ami304d /vendor/bin/ami304d
     user system
     group system
     disabled
     class main
 
-#service memsicd /system/bin/memsicd
+#service memsicd /vendor/bin/memsicd
 #     disabled
 #    user system
 #    group system
 #    class main
 
-service memsicd3416x /system/bin/memsicd3416x
+service memsicd3416x /vendor/bin/memsicd3416x
      disabled
 	 user system
     group system
     class main
 
 #AGold Bruce 2015.05.16
-service memsicd3524x /system/bin/memsicd3524x
+service memsicd3524x /vendor/bin/memsicd3524x
 	 user system
     group system
     class main    
 #endif
 
 #AGold gengdong 2016.02.23
-service st480 /system/bin/st480
+service st480 /vendor/bin/st480
 	 user system
     group system
     class main  
 #endif
    
-service akmd8975 /system/bin/akmd8975
+service akmd8975 /vendor/bin/akmd8975
     disabled
     user system
     group system
     class main
 
-service akmd8963 /system/bin/akmd8963
+service akmd8963 /vendor/bin/akmd8963
     disabled
     user system
     group system
     class main
 
-service akmd09911 /system/bin/akmd09911
+service akmd09911 /vendor/bin/akmd09911
     disabled
     user system
     group system
     class main
-service bmm050d /system/bin/bmm050d
+service bmm050d /vendor/bin/bmm050d
     disabled
     user system
     group system
     class main
 
-service bmm056d /system/bin/bmm056d
+service bmm056d /vendor/bin/bmm056d
     disabled
     user system
     group system
     class main
-service mc6420d /system/bin/mc6420d
+service mc6420d /vendor/bin/mc6420d
     disabled
     user system
     group system
     class main
-service qmcX983d /system/bin/qmcX983d
+service qmcX983d /vendor/bin/qmcX983d
      disabled
 	 user system
     group system
     class main
     oneshot
 
-service orientationd /system/bin/orientationd
+service orientationd /vendor/bin/orientationd
     disabled
     user system
     group system input
     class main
-service AcdApiDaemon /system/bin/AcdApiDaemon
+service AcdApiDaemon /vendor/bin/AcdApiDaemon
     disabled
     user system
     group system
     class main
 
-service geomagneticd /system/bin/geomagneticd
+service geomagneticd /vendor/bin/geomagneticd
     disabled
     user system
     group system input
     class main
 
-service mpud6050 /system/bin/mpud6050
+service mpud6050 /vendor/bin/mpud6050
     oneshot
     user system
     group system
 
-service mc64xxd /system/bin/mc64xxd
+service mc64xxd /vendor/bin/mc64xxd
     disabled
     user system
     group system
@@ -785,7 +785,7 @@ service mc64xxd /system/bin/mc64xxd
 #
 # emsvr service (start)
 #
-service emsvr /system/bin/em_svr
+service emsvr /vendor/bin/em_svr
     class main
     user system
     group system radio diag
@@ -795,38 +795,38 @@ service emsvr /system/bin/em_svr
 #
 
 # Thermal
-service thermal_manager /system/bin/thermal_manager
+service thermal_manager /vendor/bin/thermal_manager
     class main
     user root
     group system
     oneshot
 
-service fuelgauged /system/bin/fuelgauged
+service fuelgauged /vendor/bin/fuelgauged
     class main
     user system
     group system
 
-service wmtLoader /system/bin/wmt_loader
+service wmtLoader /vendor/bin/wmt_loader
     user root
     group root
     class core
     oneshot
 
-service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
+service conn_launcher /vendor/bin/6620_launcher -p /vendor/etc/firmware/
     user system
     group system
     class core
 
-service kpoc_charger /system/bin/kpoc_charger
+service kpoc_charger /vendor/bin/kpoc_charger
     class charger
 
 # Fingerprint
-service etsd /system/bin/etsd
+service etsd /vendor/bin/etsd
     class late_start
     user system
     group system
 
-service fingerprintd /system/bin/fingerprintd
+service fingerprintd /vendor/bin/fingerprintd
     class late_start
     user system
     group system
