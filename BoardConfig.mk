@@ -64,3 +64,6 @@ WITH_LINEAGE_CHARGER := false
 
 #HIDL
 DEVICE_MANIFEST_FILE := device/elephone/p9000/hidl/manifest.xml
+
+# S/W Gatekeeper
+BOARD_USE_SOFT_GATEKEEPER := true

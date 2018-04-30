@@ -1,0 +1,42 @@
+From 8fae27a9ae5a7c53f88c5e4363caf972d3f141da Mon Sep 17 00:00:00 2001
+From: danielhk <daniel.p6800@gmail.com>
+Date: Sun, 3 Dec 2017 22:01:01 +0800
+Subject: [PATCH] Workaround for MTK camera blobs
+
+Oreo requires the user handle in sGetMemory callback. MTK camera blob
+just use NULL.
+As a workaround, save the user handle at open() for later use.
+---
+ camera/device/1.0/default/CameraDevice.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/camera/device/1.0/default/CameraDevice.cpp b/camera/device/1.0/default/CameraDevice.cpp
+index c53c0d8b..2776be91 100644
+--- a/camera/device/1.0/default/CameraDevice.cpp
++++ b/camera/device/1.0/default/CameraDevice.cpp
+@@ -36,6 +36,8 @@ using ::android::hardware::graphics::common::V1_0::PixelFormat;
+ 
+ HandleImporter CameraDevice::sHandleImporter;
+ 
++CameraDevice* sUser = nullptr;
++
+ Status CameraDevice::getHidlStatus(const int& status) {
+     switch (status) {
+         case 0: return Status::OK;
+@@ -361,7 +363,7 @@ CameraDevice::CameraHeapMemory::~CameraHeapMemory() {
+ // shared memory methods
+ camera_memory_t* CameraDevice::sGetMemory(int fd, size_t buf_size, uint_t num_bufs, void *user) {
+     ALOGV("%s", __FUNCTION__);
+-    CameraDevice* object = static_cast<CameraDevice*>(user);
++    CameraDevice* object = (user == nullptr)? sUser : static_cast<CameraDevice*>(user);
+     if (object->mDeviceCallback == nullptr) {
+         ALOGE("%s: camera HAL request memory while camera is not opened!", __FUNCTION__);
+         return nullptr;
+@@ -662,6 +664,7 @@ Return<Status> CameraDevice::open(const sp<ICameraDeviceCallback>& callback) {
+     mDeviceCallback = callback;
+ 
+     if (mDevice->ops->set_callbacks) {
++	sUser = this;
+         mDevice->ops->set_callbacks(mDevice,
+                 sNotifyCb, sDataCb, sDataCbTimestamp, sGetMemory, this);
+     }

@@ -1,0 +1,36 @@
+From 9b0c00f8a989652d22f62317e7e28879b4cfe08b Mon Sep 17 00:00:00 2001
+From: danielhk <daniel.p6800@gmail.com>
+Date: Sun, 3 Dec 2017 22:03:01 +0800
+Subject: [PATCH 3/5] Disable vndk for the time being
+
+---
+ camera/provider/2.4/default/service.cpp | 2 +-
+ gnss/1.0/default/service.cpp            | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/camera/provider/2.4/default/service.cpp b/camera/provider/2.4/default/service.cpp
+index 7eeb6379..b49828e2 100644
+--- a/camera/provider/2.4/default/service.cpp
++++ b/camera/provider/2.4/default/service.cpp
+@@ -29,6 +29,6 @@ int main()
+     ALOGI("Camera provider Service is starting.");
+     // The camera HAL may communicate to other vendor components via
+     // /dev/vndbinder
+-    android::ProcessState::initWithDriver("/dev/vndbinder");
++    //android::ProcessState::initWithDriver("/dev/vndbinder");
+     return defaultPassthroughServiceImplementation<ICameraProvider>("legacy/0", /*maxThreads*/ 6);
+ }
+diff --git a/gnss/1.0/default/service.cpp b/gnss/1.0/default/service.cpp
+index 0704e7f5..fc0f4fb9 100644
+--- a/gnss/1.0/default/service.cpp
++++ b/gnss/1.0/default/service.cpp
+@@ -12,6 +12,6 @@ using android::hardware::defaultPassthroughServiceImplementation;
+ int main() {
+     // The GNSS HAL may communicate to other vendor components via
+     // /dev/vndbinder
+-    android::ProcessState::initWithDriver("/dev/vndbinder");
++    //android::ProcessState::initWithDriver("/dev/vndbinder");
+     return defaultPassthroughServiceImplementation<IGnss>();
+ }
+-- 
+2.14.1
